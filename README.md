@@ -28,3 +28,21 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Heroku Deploy
+
+```bash
+# Create a Heroku Dyno using Node.js buildpack
+heroku apps:create YOUR-HEROKU-DYNO-NAME --buildpack https://github.com/heroku/heroku-buildpack-nodejs
+
+# Add static buildpack as secondary
+heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static --index 2
+
+# Set `API_PROXY_ORIGIN` environment variable
+heroku config:set API_PROXY_ORIGIN="https://gateway.marvel.com/v1/public/"
+
+# Deploy your application
+git push heroku master
+```
+
+In your browser navigate to https://YOUR-HEROKU-DYNO-NAME.herokuapp.com/
