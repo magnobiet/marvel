@@ -10,7 +10,7 @@
 
 			</v-flex>
 
-			<v-pagination :length="totalPages" :total-visible="10" v-if="characters && characters.result && characters.result.length" v-model="page" @input="paginate"></v-pagination>
+			<v-pagination :length="totalPages" :total-visible="10" v-model="page" @input="paginate"></v-pagination>
 
 		</v-layout>
 
@@ -45,7 +45,7 @@
 			]),
 			totalPages: {
 				get: function() {
-					return Math.ceil(this.characters.total / 20);
+					return Math.ceil(this.characters.total / 20) || 0;
 				}
 			}
 		},
