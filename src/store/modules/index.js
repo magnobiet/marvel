@@ -4,7 +4,7 @@ import Comics from './comics';
 import Creators from './creators';
 import Events from './events';
 import Series from './series';
-import Stories from './Stories';
+import Stories from './stories';
 
 export default {
 	modules: {
