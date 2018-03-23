@@ -76,6 +76,12 @@
 				to: {
 					name: 'PageDashboard'
 				}
+			},{
+				icon: '',
+				text: 'Characters',
+				to: {
+					name: 'PageMarvelCharacters'
+				}
 			}]
 		}),
 		created() {
