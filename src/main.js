@@ -2,7 +2,6 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import VueProgressBar from 'vue-progressbar';
 
 import App from './App';
 import store from './store';
@@ -22,7 +21,6 @@ Vue.use(Http, {
 	}
 });
 Vue.use(Vuetify);
-Vue.use(VueProgressBar);
 
 /* eslint-disable no-new */
 new Vue({
