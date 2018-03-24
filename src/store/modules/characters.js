@@ -2,9 +2,9 @@ import qs from 'query-string';
 
 function formatResult(character) {
 
-	character.urlDetail = character.urls.filter((url) => url.type === 'detail')[0].url;
+	character.urlDetail = character.urls.filter((url) => url.type === 'detail')[0].url.replace('http:', 'https:');
 	character.description = character.description ? character.description : 'No description for this character.';
-	character.image = `${ character.thumbnail.path }.${ character.thumbnail.extension }`;
+	character.image = `${ character.thumbnail.path }.${ character.thumbnail.extension }`.replace('http:', 'https:');
 
 	return character;
 
