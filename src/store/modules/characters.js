@@ -28,6 +28,9 @@ export default {
 		}
 	},
 	actions: {
+		CLEAR_CHARACTERS(context) {
+			context.commit('RECEIVE_CHARACTERS', {});
+		},
 		async FETCH_CHARACTERS(context, payload) {
 
 			let queryString = {

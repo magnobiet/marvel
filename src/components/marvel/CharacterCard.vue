@@ -22,7 +22,7 @@
 
 			<v-spacer></v-spacer>
 
-			<v-btn :to="{ name: 'PageMarvelCharacter', params: { id: character.id }}">
+			<v-btn flat :to="{ name: 'PageMarvelCharacter', params: { id: character.id }}">
 				See details
 			</v-btn>
 

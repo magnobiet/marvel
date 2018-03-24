@@ -6,11 +6,19 @@
 
 			<v-flex xs12>
 
-				<v-text-field label="Search character name" v-model="search" :append-icon="'search'" @input="doSearch"></v-text-field>
+				<marvel-character-search></marvel-character-search>
 
 			</v-flex>
 
-			<v-flex xs12 class="text-xs-center" v-if="!totalPages">
+			<v-flex xs12 class="text-xs-center" v-if="characters.results && !characters.results.length">
+
+				 <v-alert type="info" :value="true">
+				 	Nothing to see here...
+				 </v-alert>
+
+			</v-flex>
+
+			<v-flex xs12 class="text-xs-center" v-if="isLoading">
 
 			    <v-progress-circular indeterminate :size="50" color="amber"></v-progress-circular>
 
@@ -41,17 +49,14 @@
 		mapActions
 	} from 'vuex';
 
-	import {
-		debounce
-	} from 'lodash';
-
 	import MarvelCharacterCard from '../marvel/CharacterCard';
+	import MarvelCharacterSearch from '../marvel/CharacterSearch';
 
 	export default {
 		name: 'PageMarvelCharacters',
 		data: () => ({
 			page: 1,
-			search: ''
+			isLoading: false
 		}),
 		computed: {
 			...mapGetters([
@@ -64,43 +69,31 @@
 			}
 		},
 		components: {
-			MarvelCharacterCard
+			MarvelCharacterCard,
+			MarvelCharacterSearch
 		},
 		methods: {
 			...mapActions([
 				'FETCH_CHARACTERS'
 			]),
+			loading(status) {
+				this.isLoading = status;
+			},
 			paginate(page) {
+
+				this.loading(true);
 
 				this.FETCH_CHARACTERS({
 					page
-				});
+				}).then(() => this.loading(false), () => this.loading(false));
 
-			},
-			doSearch: debounce(function() {
-
-				if (this.search !== '') {
-
-					this.FETCH_CHARACTERS({
-						filter: {
-							nameStartsWith: this.search,
-							orderBy: 'name'
-						}
-					});
-
-				} else {
-
-					this.FETCH_CHARACTERS({
-						page: 1
-					});
-
-				}
-
-			}, 1000)
+			}
 		},
 		created() {
 
-			this.FETCH_CHARACTERS();
+			this.loading(true);
+
+			this.FETCH_CHARACTERS().then(() => this.loading(false), () => this.loading(false));
 
 		}
 	};
