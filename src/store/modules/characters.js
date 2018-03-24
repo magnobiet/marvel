@@ -1,25 +1,46 @@
 import qs from 'query-string';
 
+function formatResult(character) {
+
+	character.urlDetail = character.urls.filter((url) => url.type === 'detail')[0].url;
+	character.description = character.description ? character.description : 'No description for this character.';
+	character.image = `${ character.thumbnail.path }.${ character.thumbnail.extension }`;
+
+	return character;
+
+}
+
 export default {
 	state: {
-		data: []
+		list: {},
+		detail: {},
 	},
 	getters: {
-		characters: (state) => state.data
+		characters: (state) => state.list,
+		character: (state) => state.detail
 	},
 	mutations: {
 		RECEIVE_CHARACTERS(state, payload) {
-			state.data = payload.characters;
+			state.list = payload;
+		},
+		RECEIVE_CHARACTER(state, payload) {
+			state.detail = payload;
 		}
 	},
 	actions: {
-
 		async FETCH_CHARACTERS(context, payload) {
 
-			const queryString = {
+			let queryString = {
 				...this.getters.apiQuery,
 				...this.getters.apiPaginate
 			};
+
+			if (payload && payload.filter) {
+
+				queryString.orderBy = payload.filter.orderBy;
+				queryString.nameStartsWith = payload.filter.nameStartsWith;
+
+			}
 
 			if (payload && payload.page) {
 				queryString.offset = (payload.page - 1) * 20;
@@ -29,11 +50,26 @@ export default {
 				data
 			} = await this._vm.$http.get(`characters?${ qs.stringify(queryString) }`);
 
-			context.commit('RECEIVE_CHARACTERS', {
-				characters: data.data
-			});
+			data.data.results = data.data.results.map((character) => formatResult(character));
+
+			context.commit('RECEIVE_CHARACTERS', data.data);
+
+		},
+		async FETCH_CHARACTER(context, payload) {
+
+			const queryString = {
+				...this.getters.apiQuery,
+				...this.getters.apiPaginate
+			};
+
+			const {
+				data
+			} = await this._vm.$http.get(`characters/${ payload.id }?${ qs.stringify(queryString) }`);
+
+			data.data.results = data.data.results.map((character) => formatResult(character));
+
+			context.commit('RECEIVE_CHARACTER', data.data.results[0]);
 
 		}
-
 	}
 };

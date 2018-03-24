@@ -2,7 +2,7 @@
 
 	<v-card>
 
-		<v-card-media :src="character.thumbnail.path + '.' + character.thumbnail.extension" height="200px">
+		<v-card-media :src="character.image" height="200px">
 
 			<v-container fill-height fluid>
 
@@ -22,16 +22,8 @@
 
 			<v-spacer></v-spacer>
 
-			<v-btn icon>
-				<v-icon>favorite</v-icon>
-			</v-btn>
-
-			<v-btn icon>
-				<v-icon>bookmark</v-icon>
-			</v-btn>
-
-			<v-btn icon>
-				<v-icon>share</v-icon>
+			<v-btn :to="{ name: 'PageMarvelCharacter', params: { id: character.id }}">
+				See details
 			</v-btn>
 
 		</v-card-actions>
