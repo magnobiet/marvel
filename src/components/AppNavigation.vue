@@ -77,7 +77,7 @@
 					name: 'PageDashboard'
 				}
 			},{
-				icon: '',
+				icon: 'face',
 				text: 'Characters',
 				to: {
 					name: 'PageMarvelCharacters'
