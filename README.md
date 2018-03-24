@@ -1,6 +1,6 @@
 # Marvel App
 
-> A Marvel project
+![Screen Shot](screen-shot.png)
 
 ## Build Setup
 
