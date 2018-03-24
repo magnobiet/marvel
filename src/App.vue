@@ -26,12 +26,15 @@
 
 		</v-app>
 
+		<app-loader></app-loader>
+
 	</div>
 
 </template>
 
 <script>
 
+	import AppLoader from '@/components/AppLoader';
 	import AppToolbar from '@/components/AppToolbar';
 	import AppNavigation from '@/components/AppNavigation';
 	import AppFooter from '@/components/AppFooter';
@@ -39,6 +42,7 @@
 	export default {
 		name: 'App',
 		components: {
+			AppLoader,
 			AppToolbar,
 			AppNavigation,
 			AppFooter
