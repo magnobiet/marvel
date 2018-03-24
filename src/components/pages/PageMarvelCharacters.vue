@@ -18,15 +18,15 @@
 
 			</v-flex>
 
-			<v-flex xs12 class="text-xs-center" v-if="isLoading">
-
-			    <v-progress-circular indeterminate :size="50" color="amber"></v-progress-circular>
-
-			</v-flex>
-
 			<v-flex xs3 v-else v-for="character in characters.results" :key="character.name">
 
 				<marvel-character-card :character="character"></marvel-character-card>
+
+			</v-flex>
+
+			<v-flex xs12 class="text-xs-center" v-if="isLoading">
+
+				<v-progress-circular indeterminate :size="50" color="amber"></v-progress-circular>
 
 			</v-flex>
 
