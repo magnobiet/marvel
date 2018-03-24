@@ -4,13 +4,19 @@
 
 		<v-layout row wrap>
 
-			<v-flex xs3 v-for="character in characters.results" :key="character.name">
+			<v-flex xs12 class="text-xs-center" v-if="!totalPages">
+
+			    <v-progress-circular indeterminate :size="50" color="amber"></v-progress-circular>
+
+			</v-flex>
+
+			<v-flex xs3 v-else v-for="character in characters.results" :key="character.name">
 
 				<MarvelCharacterCard :character="character"></MarvelCharacterCard>
 
 			</v-flex>
 
-			<v-pagination :length="totalPages" :total-visible="10" v-model="page" @input="paginate"></v-pagination>
+			<v-pagination :length="totalPages" :total-visible="10" v-if="totalPages" v-model="page" @input="paginate"></v-pagination>
 
 		</v-layout>
 
@@ -22,7 +28,6 @@
 
 	import {
 		mapGetters,
-		mapState,
 		mapActions
 	} from 'vuex';
 
@@ -30,18 +35,12 @@
 
 	export default {
 		name: 'PageMarvelCharacterCard',
-		props: {
-			// TODO
-		},
 		data: () => ({
 			page: 1
 		}),
 		computed: {
 			...mapGetters([
 				'characters'
-			]),
-			...mapState([
-				// TODO
 			]),
 			totalPages: {
 				get: function() {
@@ -51,9 +50,6 @@
 		},
 		components: {
 			MarvelCharacterCard
-		},
-		watch: {
-			// TODO
 		},
 		methods: {
 			...mapActions([
@@ -67,38 +63,11 @@
 
 			}
 		},
-		beforeCreate() {
-			// TODO
-		},
 		created() {
 
 			this.FETCH_CHARACTERS();
 
-		},
-		beforeMount() {
-			// TODO
-		},
-		mounted() {
-			// TODO
-		},
-		beforeUpdate() {
-			// TODO
-		},
-		updated() {
-			// TODO
-		},
-		beforeDestroy() {
-			// TODO
-		},
-		destroyed() {
-			// TODO
 		}
 	};
 
 </script>
-
-<style lang="scss" scoped>
-
-	// TODO
-
-</style>
