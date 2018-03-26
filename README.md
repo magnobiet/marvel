@@ -58,3 +58,7 @@ In your browser navigate to https://YOUR-HEROKU-DYNO-NAME.herokuapp.com/
 - [axios/axios](https://github.com/axios/axios)
 - [sindresorhus/query-string](https://github.com/sindresorhus/query-string)
 - [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify)
+
+## License
+
+This project is licensed under the [MIT License](https://magno.mit-license.org/2018). Copyright © Magno Biét
