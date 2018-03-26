@@ -1,45 +1,47 @@
 import axios from 'axios';
 
-const Http = (options, Vue) => {
+export default {
+	install(Vue, options) {
 
-	const Axios = axios.create(options);
+		const Http = (Vue, options) => {
 
-	Axios.interceptors.request.use((config) => {
+			const Axios = axios.create(options);
 
-		config.startTime = new Date().getTime();
+			Axios.interceptors.request.use((config) => {
 
-		Vue.$bus.$emit('loader:toggle', true);
+				config.startTime = new Date().getTime();
 
-		return config;
+				Vue.$bus.$emit('loader:toggle', true);
 
-	}, (error) => Promise.reject(error));
+				return config;
 
-	Axios.interceptors.response.use((response) => {
+			}, (error) => Promise.reject(error));
 
-		response.config.endTime = new Date().getTime();
+			Axios.interceptors.response.use((response) => {
 
-		Vue.$bus.$emit('loader:toggle', false);
+				response.config.endTime = new Date().getTime();
 
-		return response;
+				Vue.$bus.$emit('loader:toggle', false);
 
-	}, (error) => {
+				return response;
 
-		Vue.$bus.$emit('loader:toggle', false);
+			}, (error) => {
 
-		return Promise.reject(error);
+				Vue.$bus.$emit('loader:toggle', false);
 
-	});
+				return Promise.reject(error);
 
-	return Axios;
+			});
 
+			return Axios;
+
+		};
+
+		Object.defineProperties(Vue.prototype, {
+			$http: {
+				get: () => Http(Vue.prototype, options)
+			}
+		});
+
+	}
 };
-
-export default function install(Vue, options) {
-
-	Object.defineProperties(Vue.prototype, {
-		$http: {
-			get: () => Http(options, Vue.prototype)
-		}
-	});
-
-}
