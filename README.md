@@ -46,3 +46,15 @@ git push heroku master
 ```
 
 In your browser navigate to https://YOUR-HEROKU-DYNO-NAME.herokuapp.com/
+
+## Used packages
+
+- [vuejs/vue](https://github.com/vuejs/vue)
+- [vuejs/vuex](https://github.com/vuejs/vuex)
+- [vuejs/vue-router](https://github.com/vuejs/vue-router)
+- [vuejs/vue-cli](https://github.com/vuejs/vue-cli)
+- [robinvdvleuten/vuex-persistedstate](https://github.com/robinvdvleuten/vuex-persistedstate)
+- [lodash/lodash](https://github.com/lodash/lodash)
+- [axios/axios](https://github.com/axios/axios)
+- [sindresorhus/query-string](https://github.com/sindresorhus/query-string)
+- [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify)
