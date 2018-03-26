@@ -60,11 +60,12 @@
 		}),
 		computed: {
 			...mapGetters([
+				'apiPaginate',
 				'characters'
 			]),
 			totalPages: {
-				get: function() {
-					return Math.ceil(this.characters.total / 20) || 0;
+				get() {
+					return Math.ceil(this.characters.total / this.apiPaginate.limit) || 0;
 				}
 			}
 		},
@@ -85,7 +86,12 @@
 
 				this.FETCH_CHARACTERS({
 					page
-				}).then(() => this.loading(false), () => this.loading(false));
+				}).then(() => {
+
+					this.loading(false);
+					window.scrollTo(0, 0);
+
+				}, () => this.loading(false));
 
 			}
 		},
