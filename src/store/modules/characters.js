@@ -31,22 +31,22 @@ export default {
 		CLEAR_CHARACTERS(context) {
 			context.commit('RECEIVE_CHARACTERS', {});
 		},
-		async FETCH_CHARACTERS(context, payload) {
+		async FETCH_CHARACTERS(context, payload = {}) {
 
-			let queryString = {
+			const queryString = {
 				...this.getters.apiQuery,
 				...this.getters.apiPaginate
 			};
 
-			if (payload && payload.filter) {
+			if (payload.filter) {
 
 				queryString.orderBy = payload.filter.orderBy;
 				queryString.nameStartsWith = payload.filter.nameStartsWith;
 
 			}
 
-			if (payload && payload.page) {
-				queryString.offset = (payload.page - 1) * 20;
+			if (payload.page) {
+				queryString.offset = (payload.page - 1) * this.getters.apiPaginate.limit;
 			}
 
 			const {
