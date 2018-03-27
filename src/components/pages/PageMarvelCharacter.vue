@@ -1,36 +1,56 @@
 <template>
 
-	<v-flex xs12 sm12>
+	<v-container fluid grid-list-sm>
 
-		<v-card>
+		<v-layout row wrap>
 
-			<v-card-title primary-title>
+			<v-flex xs12 sm12>
 
-				<div class="headline">
-					{{ character.name }} <small class="body-1 grey--text">#{{ character.id }}</small>
-				</div>
+				<v-card>
 
-			</v-card-title>
+					<v-card-title primary-title>
 
-			<v-card-media :src="character.image" height="400px"></v-card-media>
+						<div class="headline">
+							{{ character.name }} <small class="body-1 grey--text">#{{ character.id }}</small>
+						</div>
 
-			<v-card-text>
-				<p>{{ character.description }}</p>
-			</v-card-text>
+					</v-card-title>
 
-			<v-card-actions>
+					<v-parallax :src="character.image"></v-parallax>
 
-				<v-btn flat :href="character.urlDetail" target="_blank">
-					More details
-				</v-btn>
+					<v-card-text>
+						<p>{{ character.description }}</p>
+					</v-card-text>
 
-				<v-spacer></v-spacer>
+					<v-card-actions>
 
-			</v-card-actions>
+						<v-btn flat :href="character.urlDetail" target="_blank">
+							More details
+						</v-btn>
 
-		</v-card>
+						<v-spacer></v-spacer>
 
-	</v-flex>
+					</v-card-actions>
+
+				</v-card>
+
+			</v-flex>
+
+			<v-flex d-flex xs12 sm6>
+
+				<marvel-character-comics-card v-if="character.comics && character.comics.items && character.comics.items.length" :comics="character.comics"></marvel-character-comics-card>
+
+			</v-flex>
+
+			<v-flex d-flex xs12 sm6>
+
+				 <marvel-character-stories-card v-if="character.stories && character.stories.items && character.stories.items.length" :stories="character.stories"></marvel-character-stories-card>
+
+			</v-flex>
+
+		</v-layout>
+
+	</v-container>
 
 </template>
 
@@ -41,15 +61,23 @@
 		mapActions
 	} from 'vuex';
 
+	import MarvelCharacterComicsCard from '../marvel/CharacterComicsCard';
+	import MarvelCharacterStoriesCard from '../marvel/CharacterStoriesCard';
+
 	export default {
 		name: 'PageMarvelCharacter',
 		data: () => ({
-			show: false
+			show: false,
+			lorem: 'Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.'
 		}),
 		computed: {
 			...mapGetters([
 				'character'
 			])
+		},
+		components: {
+			MarvelCharacterComicsCard,
+			MarvelCharacterStoriesCard
 		},
 		methods: {
 			...mapActions([
