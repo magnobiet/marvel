@@ -1,5 +1,8 @@
 # Marvel App
 
+                
+[![Known Vulnerabilities](https://snyk.io/test/github/magnobiet/marvel-app:package.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/magnobiet/marvel-app:package.json?targetFile=package.json)
+
 ![Screen Shot](screen-shot.png)
 
 ## Build Setup
