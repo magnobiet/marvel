@@ -49,7 +49,7 @@
 		},
 		computed: {
 			company: {
-				get: () => 'Marvel'
+        get: () => 'Marvel'
 			}
 		}
 	};
@@ -58,7 +58,7 @@
 
 <style lang="scss">
 
-	@import '~vuetify/dist/vuetify.min';
+	@import '~vuetify/dist/vuetify.min.css';
 
 	body {
 		font-family: Avenir, Helvetica, Arial, sans-serif;

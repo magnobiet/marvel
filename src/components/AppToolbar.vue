@@ -33,7 +33,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+v-toolbar{
+	color: red;
+}
 	.toolbar__title {
 		font-family: 'Product Sans', Avenir, Helvetica, Arial, sans-serif;
 	}

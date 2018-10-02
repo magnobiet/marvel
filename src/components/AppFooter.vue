@@ -1,6 +1,6 @@
 <template>
 
-	<v-footer class="grey darken-3" height="auto" app inset>
+	<v-footer class="grey darken-3" app inset>
 
 		<v-layout row wrap justify-center>
 
@@ -32,3 +32,9 @@
 	};
 
 </script>
+
+<style lang="scss" scoped>
+v-footer{
+    height: auto;
+}
+</style>
