@@ -9,22 +9,22 @@ import PageMarvelCharacter from '@/components/pages/PageMarvelCharacter.vue';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [{
-    path: '*',
-    component: PageNotFound,
-  }, {
-    path: '/',
-    name: 'PageDashboard',
-    component: PageDashboard,
-  }, {
-    path: '/character',
-    name: 'PageMarvelCharacters',
-    component: PageMarvelCharacters,
-  }, {
-    path: '/character/:id',
-    name: 'PageMarvelCharacter',
-    component: PageMarvelCharacter,
-  }],
+	mode: 'history',
+	base: process.env.BASE_URL,
+	routes: [{
+		path: '*',
+		component: PageNotFound,
+	}, {
+		path: '/',
+		name: 'PageDashboard',
+		component: PageDashboard,
+	}, {
+		path: '/character',
+		name: 'PageMarvelCharacters',
+		component: PageMarvelCharacters,
+	}, {
+		path: '/character/:id',
+		name: 'PageMarvelCharacter',
+		component: PageMarvelCharacter,
+	}],
 });

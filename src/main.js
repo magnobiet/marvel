@@ -12,16 +12,16 @@ Vue.config.productionTip = false;
 // Plugins
 Vue.use(EventBus);
 Vue.use(Http, {
-  baseURL: '/api/',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json; charset=utf-8',
-  },
+	baseURL: '/api/',
+	headers: {
+		Accept: 'application/json',
+		'Content-Type': 'application/json; charset=utf-8',
+	},
 });
 Vue.use(Vuetify);
 
 new Vue({
-  router,
-  store,
-  render: h => h(App),
+	router,
+	store,
+	render: h => h(App),
 }).$mount('#app');

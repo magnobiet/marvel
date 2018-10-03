@@ -1,6 +1,6 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
-const bus = new Vue()
+const bus = new Vue();
 
 export default {
 	install(Vue) {

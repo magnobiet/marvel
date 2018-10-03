@@ -7,13 +7,13 @@ import Series from './series';
 import Stories from './stories';
 
 export default {
-  modules: {
-    Settings,
-    Characters,
-    Comics,
-    Creators,
-    Events,
-    Series,
-    Stories,
-  },
+	modules: {
+		Settings,
+		Characters,
+		Comics,
+		Creators,
+		Events,
+		Series,
+		Stories,
+	},
 };
