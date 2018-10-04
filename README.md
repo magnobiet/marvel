@@ -1,6 +1,6 @@
 # Marvel App
 
-                
+
 [![Known Vulnerabilities](https://snyk.io/test/github/magnobiet/marvel-app:package.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/magnobiet/marvel-app:package.json?targetFile=package.json)
 
 ![Screen Shot](screen-shot.png)
@@ -12,7 +12,7 @@
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run serve
 
 # build for production with minification
 npm run build

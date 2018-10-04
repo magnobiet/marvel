@@ -15,7 +15,7 @@ export default {
 
 				return config;
 
-			}, (error) => Promise.reject(error));
+			}, error => Promise.reject(error));
 
 			Axios.interceptors.response.use((response) => {
 
@@ -39,9 +39,9 @@ export default {
 
 		Object.defineProperties(Vue.prototype, {
 			$http: {
-				get: () => Http(Vue.prototype, options)
-			}
+				get: () => Http(Vue.prototype, options),
+			},
 		});
 
-	}
+	},
 };

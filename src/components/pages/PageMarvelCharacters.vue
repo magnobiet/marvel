@@ -6,33 +6,33 @@
 
 			<v-flex xs12>
 
-				<marvel-character-search></marvel-character-search>
+				<marvel-character-search/>
 
 			</v-flex>
 
-			<v-flex xs12 class="text-xs-center" v-if="characters.results && !characters.results.length">
+			<v-flex v-if="characters.results && !characters.results.length" xs12 class="text-xs-center">
 
-				 <v-alert type="info" :value="true">
-				 	Nothing to see here...
-				 </v-alert>
-
-			</v-flex>
-
-			<v-flex xs3 v-else v-for="character in characters.results" :key="character.name">
-
-				<marvel-character-card :character="character"></marvel-character-card>
+				<v-alert :value="true" type="info">
+					Nothing to see here...
+				</v-alert>
 
 			</v-flex>
 
-			<v-flex xs12 class="text-xs-center" v-if="isLoading">
+			<v-flex v-for="character in characters.results" v-else :key="character.name" xs3>
 
-				<v-progress-circular indeterminate :size="50" color="amber"></v-progress-circular>
+				<marvel-character-card :character="character"/>
+
+			</v-flex>
+
+			<v-flex v-if="isLoading" xs12 class="text-xs-center">
+
+				<v-progress-circular :size="50" indeterminate color="amber"/>
 
 			</v-flex>
 
 			<v-flex xs12>
 
-				<v-pagination :length="totalPages" :total-visible="10" v-if="totalPages" v-model="page" @input="paginate"></v-pagination>
+				<v-pagination v-if="totalPages" :length="totalPages" :total-visible="10" v-model="page" @input="paginate"/>
 
 			</v-flex>
 
@@ -54,6 +54,10 @@
 
 	export default {
 		name: 'PageMarvelCharacters',
+		components: {
+			MarvelCharacterCard,
+			MarvelCharacterSearch
+		},
 		data: () => ({
 			page: 1,
 			isLoading: false
@@ -69,9 +73,12 @@
 				}
 			}
 		},
-		components: {
-			MarvelCharacterCard,
-			MarvelCharacterSearch
+		created() {
+
+			this.loading(true);
+
+			this.FETCH_CHARACTERS().then(() => this.loading(false), () => this.loading(false));
+
 		},
 		methods: {
 			...mapActions([
@@ -94,13 +101,6 @@
 				}, () => this.loading(false));
 
 			}
-		},
-		created() {
-
-			this.loading(true);
-
-			this.FETCH_CHARACTERS().then(() => this.loading(false), () => this.loading(false));
-
 		}
 	};
 

@@ -1,6 +1,6 @@
 <template>
 
-	<v-text-field label="Search character name" v-model="search" :append-icon="'search'" @input="doSearch"></v-text-field>
+	<v-text-field v-model="search" :append-icon="'search'" label="Search character name" @input="doSearch"/>
 
 </template>
 

@@ -1,48 +1,30 @@
-// http://eslint.org/docs/user-guide/configuring
-
 module.exports = {
 	root: true,
-	parser: 'babel-eslint',
-	parserOptions: {
-		sourceType: 'module'
-	},
 	env: {
-		es6: true,
-		browser: true,
+		node: true
 	},
-	extends: 'eslint:recommended',
-	// required to lint *.vue files
-	plugins: [
-		'html'
+	extends: [
+		'eslint:recommended',
+		'plugin:vue/essential'
 	],
-	// check if imports actually resolve
-	'settings': {
-		'import/resolver': {
-			'webpack': {
-				'config': 'build/webpack.base.conf.js'
-			}
-		}
-	},
-	// add your custom rules here
-	'rules': {
-		// don't require .vue extension when importing
-		/*'import/extensions': ['error', 'always', {
-			'js': 'never',
-			'vue': 'never'
-		}],
-		// allow optionalDependencies
-		'import/no-extraneous-dependencies': ['error', {
-			'optionalDependencies': ['test/unit/index.js']
-		}],*/
-		// allow debugger during development
-		'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-		'indent': ['error', 'tab'],
+	rules: {
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'linebreak-style': ['error', 'unix'],
-		'no-console': ['error', {
-			'allow': ['log', 'warn', 'error', 'debug']
-		}],
 		'quotes': ['error', 'single'],
-		'camelcase': ['error'],
-		'semi': ['error', 'always']
+		'camelcase': 'error',
+		'semi': ['error', 'always'],
+		'vue/attribute-hyphenation': ['error', 'always'],
+		'vue/html-end-tags': 'error',
+		'vue/html-indent': ['error', 'tab'],
+		'vue/html-self-closing': 'error',
+		'vue/require-default-prop': 'error',
+		'vue/require-prop-types': 'error',
+		'vue/attributes-order': 'error',
+		'vue/html-quotes': ['error', 'double'],
+		'vue/order-in-components': 'error'
+	},
+	parserOptions: {
+		parser: 'babel-eslint'
 	}
 };

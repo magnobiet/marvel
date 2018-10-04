@@ -4,9 +4,9 @@
 
 		<v-app id="inspire">
 
-			<app-navigation></app-navigation>
+			<app-navigation/>
 
-			<app-toolbar :company="company"></app-toolbar>
+			<app-toolbar :company="company"/>
 
 			<v-content>
 
@@ -14,7 +14,7 @@
 
 					<v-layout>
 
-						<router-view></router-view>
+						<router-view/>
 
 					</v-layout>
 
@@ -22,11 +22,11 @@
 
 			</v-content>
 
-			<app-footer :company="company"></app-footer>
+			<app-footer :company="company"/>
 
 		</v-app>
 
-		<app-loader></app-loader>
+		<app-loader/>
 
 	</div>
 
@@ -49,7 +49,7 @@
 		},
 		computed: {
 			company: {
-				get: () => 'Marvel'
+        get: () => 'Marvel'
 			}
 		}
 	};
@@ -58,7 +58,7 @@
 
 <style lang="scss">
 
-	@import '~vuetify/dist/vuetify.min';
+	@import '~vuetify/dist/vuetify.min.css';
 
 	body {
 		font-family: Avenir, Helvetica, Arial, sans-serif;

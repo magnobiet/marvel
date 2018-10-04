@@ -8,7 +8,7 @@
 
 				<v-card>
 
-					<v-card-media src="https://i.annihil.us/u/prod/misc/marvel.svg" height="200px"></v-card-media>
+					<v-img src="https://i.annihil.us/u/prod/misc/marvel.svg" height="200px"/>
 
 					<v-card-text>
 						<p>The Marvel Comics API allows developers everywhere to access information about Marvel's vast library of comics—from what's coming up, to 70 years ago.</p>
@@ -16,7 +16,7 @@
 
 					<v-card-actions>
 
-						<v-spacer></v-spacer>
+						<v-spacer/>
 
 						<v-btn href="https://developer.marvel.com/documentation/getting_started" target="_blank">
 							API Documentation
