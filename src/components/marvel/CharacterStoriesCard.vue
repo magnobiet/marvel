@@ -10,7 +10,7 @@
 
 		<v-list>
 
-			<v-list-tile avatar v-for="story in stories.items" :key="story.resourceURI">
+			<v-list-tile v-for="story in stories.items" :key="story.resourceURI" avatar>
 
 				<v-list-tile-content>
 					<v-list-tile-title>{{ story.name }}</v-list-tile-title>
@@ -31,7 +31,7 @@
 		props: {
 			stories: {
 				type: Object,
-				default: {}
+				default: Object
 			}
 		}
 	};

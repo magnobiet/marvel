@@ -1,6 +1,6 @@
 <template>
 
-	<v-progress-linear class="progress-linear-global" color="warning" :indeterminate="true" :active="isActive"></v-progress-linear>
+	<v-progress-linear :indeterminate="true" :active="isActive" class="progress-linear-global" color="warning"/>
 
 </template>
 

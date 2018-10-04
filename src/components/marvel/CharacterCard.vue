@@ -20,9 +20,9 @@
 
 		<v-card-actions>
 
-			<v-spacer></v-spacer>
+			<v-spacer/>
 
-			<v-btn flat :to="{ name: 'PageMarvelCharacter', params: { id: character.id }}">
+			<v-btn :to="{ name: 'PageMarvelCharacter', params: { id: character.id }}" flat>
 				See details
 			</v-btn>
 
@@ -39,7 +39,7 @@
 		props: {
 			character: {
 				type: Object,
-				default: {}
+				default: Object
 			}
 		}
 	};

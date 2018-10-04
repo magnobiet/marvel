@@ -16,7 +16,7 @@
 
 					</v-card-title>
 
-					<v-parallax :src="character.image"></v-parallax>
+					<v-parallax :src="character.image"/>
 
 					<v-card-text>
 						<p>{{ character.description }}</p>
@@ -24,11 +24,11 @@
 
 					<v-card-actions>
 
-						<v-btn flat :href="character.urlDetail" target="_blank">
+						<v-btn :href="character.urlDetail" flat target="_blank">
 							More details
 						</v-btn>
 
-						<v-spacer></v-spacer>
+						<v-spacer/>
 
 					</v-card-actions>
 
@@ -38,13 +38,13 @@
 
 			<v-flex d-flex xs12 sm6>
 
-				<marvel-character-comics-card v-if="character.comics && character.comics.items && character.comics.items.length" :comics="character.comics"></marvel-character-comics-card>
+				<marvel-character-comics-card v-if="character.comics && character.comics.items && character.comics.items.length" :comics="character.comics"/>
 
 			</v-flex>
 
 			<v-flex d-flex xs12 sm6>
 
-				 <marvel-character-stories-card v-if="character.stories && character.stories.items && character.stories.items.length" :stories="character.stories"></marvel-character-stories-card>
+				<marvel-character-stories-card v-if="character.stories && character.stories.items && character.stories.items.length" :stories="character.stories"/>
 
 			</v-flex>
 
@@ -66,6 +66,10 @@
 
 	export default {
 		name: 'PageMarvelCharacter',
+		components: {
+			MarvelCharacterComicsCard,
+			MarvelCharacterStoriesCard
+		},
 		data: () => ({
 			show: false
 		}),
@@ -74,22 +78,18 @@
 				'character'
 			])
 		},
-		components: {
-			MarvelCharacterComicsCard,
-			MarvelCharacterStoriesCard
-		},
-		methods: {
-			...mapActions([
-				'FETCH_CHARACTER'
-			])
-		},
 		created() {
 
 			this.FETCH_CHARACTER({
 				id: this.$route.params.id
 			});
 
-		}
+		},
+		methods: {
+			...mapActions([
+				'FETCH_CHARACTER'
+			])
+		},
 	};
 
 </script>
