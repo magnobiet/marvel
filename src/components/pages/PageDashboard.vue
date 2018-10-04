@@ -1,6 +1,6 @@
 <template>
 
-	<v-container fluid grid-list-md>
+	<v-container grid-list-md>
 
 		<v-layout row wrap>
 
@@ -18,11 +18,11 @@
 
 						<v-spacer/>
 
-						<v-btn href="https://developer.marvel.com/documentation/getting_started" target="_blank">
+						<v-btn xs6 href="https://developer.marvel.com/documentation/getting_started" target="_blank">
 							API Documentation
 						</v-btn>
 
-						<v-btn href="https://developer.marvel.com/docs" target="_blank">
+						<v-btn xs6 href="https://developer.marvel.com/docs" target="_blank">
 							Test Calls
 						</v-btn>
 
@@ -45,3 +45,7 @@
 	};
 
 </script>
+
+ <style lang="scss" scoped>
+ @import 'src/assets/style.scss';
+ </style>
