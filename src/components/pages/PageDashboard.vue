@@ -8,7 +8,8 @@
 
 				<v-card>
 
-					<v-img src="https://i.annihil.us/u/prod/misc/marvel.svg" height="200px"/>
+					<v-img v-if="!mobile" src="https://i.annihil.us/u/prod/misc/marvel.svg" height="200px"/>
+					<v-img v-else contain src="https://i.annihil.us/u/prod/misc/marvel.svg" height="200px"/>
 
 					<v-card-text>
 						<p>The Marvel Comics API allows developers everywhere to access information about Marvel's vast library of comics—from what's coming up, to 70 years ago.</p>
@@ -41,7 +42,34 @@
 <script>
 
 	export default {
-		name: 'PageDashboard'
+		name: 'PageDashboard',
+		data: () => {
+			return{
+				window: {
+					width: 0,
+					height: 0
+						}
+			};
+		},
+		computed: {
+			mobile() {
+				console.log(this.window.height);
+				return (this.window.width < 600);
+			}
+		},
+		created() {
+			window.addEventListener('resize', this.handleResize);
+			this.handleResize();
+		},
+		destroyed() {
+			window.removeEventListener('resize', this.handleResize);
+		},
+		methods: {
+			handleResize() {
+				this.window.width = window.innerWidth;
+				this.window.height = window.innerHeight;
+			}
+		},
 	};
 
 </script>
