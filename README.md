@@ -5,7 +5,33 @@
 
 ![Screen Shot](screen-shot.png)
 
-## Build Setup
+## Docker Installed: Build Setup
+
+#### Build image and start container
+
+``` bash
+# build the environment
+make build
+
+# run the container
+make run
+```
+
+#### Stop container when necessary
+
+``` bash
+# stop the container
+make stop
+```
+
+#### Start container if image was already built from step 1
+
+``` bash
+# start the container
+make run
+```
+
+## Docker Not Installed: Build Setup
 
 ``` bash
 # install dependencies
