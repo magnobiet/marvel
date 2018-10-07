@@ -8,7 +8,11 @@ build:
 	docker build -t ${BASENAME} .
 
 run:
-	docker run -it -p 8080:8080 --rm --name ${REPOSITORY} ${BASENAME}
+	docker run -it \
+	-p 8080:8080 \
+	--rm --name ${REPOSITORY} \
+	-v $(CURDIR)/src:/src \
+	${BASENAME}
 
 stop:
 	docker stop ${REPOSITORY};
