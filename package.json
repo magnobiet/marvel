@@ -5,8 +5,10 @@
   "author": "Magno Biét <magno.biet@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
+    "devServer": "node build/dev-server.js",
+    "dev": "npm run devServer --browser",
+    "dev:docker": "npm run devServer --browser false",
+    "start": "npm run devServer --browser",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",

@@ -27,9 +27,9 @@ module.exports = {
 		bundleAnalyzerReport: process.env.npm_config_report
 	},
 	dev: {
-		env: require('./dev.env'),
+		env: devEnv,
 		port: 8080,
-		autoOpenBrowser: true,
+		autoOpenBrowser: process.env.npm_config_browser,
 		assetsSubDirectory: 'static',
 		assetsPublicPath: '/',
 		proxyTable: {
