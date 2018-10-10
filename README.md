@@ -1,7 +1,4 @@
-# Marvel App
-
-
-[![Known Vulnerabilities](https://snyk.io/test/github/magnobiet/marvel-app:package.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/magnobiet/marvel-app:package.json?targetFile=package.json)
+# Marvel App [![Build Status](https://travis-ci.org/mangobiet/marvel-app.svg?branch=master)](https://travis-ci.org/magnobiet/marvel-app)
 
 ![Screen Shot](screen-shot.png)
 
