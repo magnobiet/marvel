@@ -27,3 +27,6 @@ script:
   - sonar-scanner -X
   - npm install
   - npm run build
+
+notifications:
+    slack: ${SLACK_CHANNEL}
