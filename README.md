@@ -1,4 +1,6 @@
-# Marvel App [![Build Status](https://travis-ci.org/mangobiet/marvel-app.svg?branch=master)](https://travis-ci.org/magnobiet/marvel-app)
+# Marvel App
+[![Build Status](https://travis-ci.org/mangobiet/marvel-app.svg?branch=master)](https://travis-ci.org/magnobiet/marvel-app)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=magnobiet_marvel-app%3Atravis-ci&metric=alert_status)](https://sonarcloud.io/dashboard?id=magnobiet_marvel-app%3Atravis-ci)
 
 ![Screen Shot](screen-shot.png)
 
