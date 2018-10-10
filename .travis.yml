@@ -1,4 +1,5 @@
-language: node_js
+dist: trusty
+sudo: required
 
 node_js:
   - "8.12.0"
@@ -7,6 +8,11 @@ cache:
   npm: true
   directories:
   - node_modules
+
+  directories:
+    - $HOME/.npm
+    - $HOME/.sonar/cache
+    - $HOME/.sonar/native-sonar-scanner
 
 addons:
   sonarcloud:
@@ -19,6 +25,6 @@ addons:
       - travis-ci
 
 script:
-  - sonar-scanner
+  - sonar-scanner -X
   - npm install
   - npm run build
