@@ -19,5 +19,6 @@ addons:
       - travis-ci
 
 script:
+  - sonar-scanner
   - npm install
   - npm run build
