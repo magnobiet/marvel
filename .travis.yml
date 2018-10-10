@@ -1,4 +1,22 @@
-language: javascript
+language: node_js
+
+node_js:
+  - "8.12.0"
+
+cache:
+  npm: true
+  directories:
+  - node_modules
+
+addons:
+  sonarcloud:
+    organization: magnobiet-github
+    token:
+      secure: ${SONAR_SECURE_TOKEN}
+    branches:
+      - master
+      - develop
+      - travis-ci
 
 script:
   - npm install
