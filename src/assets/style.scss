@@ -1,0 +1,20 @@
+ @media (max-width: 480px) {
+ 	.container {
+ 		padding: 0 15px 0 10px;
+ 		overflow: hidden;
+ 	}
+
+ 	.v-responsive {
+ 		.v-image__image {
+ 			&--cover {
+ 				background-size: contain;
+ 			}
+ 		}
+ 	}
+
+ 	.v-card__actions {
+ 		.v-btn {
+ 			padding: 0;
+ 		}
+ 	}
+ }
