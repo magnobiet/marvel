@@ -1,9 +1,5 @@
 # Marvel App
 
-
-[![Known Vulnerabilities](https://snyk.io/test/github/magnobiet/marvel-app:package.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/magnobiet/marvel-app:package.json?targetFile=package.json)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app?ref=badge_shield)
-
 ![Screen Shot](screen-shot.png)
 
 ## Build Setup
