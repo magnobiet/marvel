@@ -2,6 +2,7 @@
 
 
 [![Known Vulnerabilities](https://snyk.io/test/github/magnobiet/marvel-app:package.json/badge.svg?targetFile=package.json)](https://snyk.io/test/github/magnobiet/marvel-app:package.json?targetFile=package.json)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app?ref=badge_shield)
 
 ![Screen Shot](screen-shot.png)
 
@@ -65,3 +66,6 @@ In your browser navigate to https://YOUR-HEROKU-DYNO-NAME.herokuapp.com/
 ## License
 
 This project is licensed under the [MIT License](https://magno.mit-license.org/2018). Copyright © Magno Biét
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app?ref=badge_large)
