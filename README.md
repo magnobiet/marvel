@@ -1,5 +1,7 @@
 # Marvel App
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/90111652ab897a304fcd/maintainability)](https://codeclimate.com/github/magnobiet/marvel-app/maintainability)
+
 ![Screen Shot](screen-shot.png)
 
 ## Build Setup
