@@ -64,4 +64,4 @@ In your browser navigate to https://YOUR-HEROKU-DYNO-NAME.herokuapp.com/
 This project is licensed under the [MIT License](https://magno.mit-license.org/2018). Copyright © Magno Biét
 
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmagnobiet%2Fmarvel-app?ref=badge_large) [![Greenkeeper badge](https://badges.greenkeeper.io/magnobiet/marvel-app.svg)](https://greenkeeper.io/)
