@@ -1,0 +1,6 @@
+dist
+node_modules
+.github
+.gitignore
+screen-shot.png
+*.md
